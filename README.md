@@ -59,6 +59,10 @@ Filters employee data based on salary range, job title, and gender.
 - salaryFrom and salaryTo: Allow range queries for salary.
 - jobTitle: Filters by the job title.
 - gender: Filters by gender.
+#### Example:
+```
+http://localhost:8080/api/v1/employees/filter?salaryTo=6500&salaryFrom=6000&jobTitle=engineer&gender=Male
+```
 
 ### Field
 #### GET /api/v1/employees/fields
@@ -74,6 +78,10 @@ Returns only specified fields from employee data.
     "yearsOfExperience", "salary", "salaryAmount", "signingBonus",
     "annualBonus", "annualStockValueBonus", "gender", "additionalComments",
     "createdTimestamp"
+#### Example:
+```
+http://localhost:8080/api/v1/employees/fields?fields=jobTitle,salary,salaryAmount
+```
 
 ### Sorting
 #### GET /api/v1/employees/sorted
@@ -89,6 +97,10 @@ Sorts employee data based on specified fields and direction.
     "yearsOfExperience", "salary", "salaryAmount", "signingBonus",
     "annualBonus", "annualStockValueBonus", "gender", "additionalComments",
     "createdTimestamp"
+#### Example:
+```
+http://localhost:8080/api/v1/employees/sorted?sort=jobTitle,salary&sortDirection=DESC
+```
 
 ### Advanced Search
 #### GET /api/v1/employees/search
@@ -103,3 +115,7 @@ Combines filtering, field selection, and sorting in a single endpoint.
   - salaryFrom and salaryTo: Allow range queries for salary.
   - jobTitle: Filters by the job title.
   - gender: Filters by gender.
+#### Example:
+```
+http://localhost:8080/api/v1/employees/search?fields=jobTitle,salary,salaryAmount&sort=jobTitle,salary&sortDirection=DESC&jobTitle=engineer&gender=Male&salaryTo=6500&salaryFrom=6000
+```
