@@ -2,15 +2,11 @@ package com.sorawee.salary.service;
 
 import com.sorawee.salary.model.EmployeeData;
 import com.sorawee.salary.repository.EmployeeDataRepository;
-
-import jakarta.persistence.criteria.*;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import jakarta.persistence.criteria.Predicate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
@@ -19,12 +15,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
-@Service
+@Service // Service annotation
 public class EmployeeDataServiceImpl implements EmployeeDataService {
 
     private final EmployeeDataRepository repository;
 
-    @Autowired
+    @Autowired // Dependency Injection
     public EmployeeDataServiceImpl(EmployeeDataRepository repository) {
         this.repository = repository;
     }

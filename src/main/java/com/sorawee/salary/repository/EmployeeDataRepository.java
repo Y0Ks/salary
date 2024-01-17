@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 
-@Repository
+@Repository // Component annotation
 public interface EmployeeDataRepository extends JpaRepository<EmployeeData, Long> , JpaSpecificationExecutor<EmployeeData> {
 
 }

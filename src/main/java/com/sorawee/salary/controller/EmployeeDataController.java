@@ -19,7 +19,7 @@ public class EmployeeDataController {
     private static final Logger logger = LoggerFactory.getLogger(EmployeeDataController.class);
     private final EmployeeDataService employeeDataService;
 
-    @Autowired
+    @Autowired // Dependency Injection
     public EmployeeDataController(EmployeeDataService employeeDataService) {
         this.employeeDataService = employeeDataService;
     }
